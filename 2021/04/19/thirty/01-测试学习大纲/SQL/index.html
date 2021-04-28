@@ -1,0 +1,384 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title> | lbb-1011的个人网站</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/normalize.css/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">lbb-1011的个人网站</h1><a id="logo" href="/.">lbb-1011的个人网站</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"></h1><div class="post-meta">2021-04-19</div><div class="post-content"><p><a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a></p>
+<p>开启远程连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create user &#96;root&#96;@&#96;%&#96; identified by &#39;root@123&#39;;</span><br><span class="line">-- 给用户赴权限</span><br><span class="line">grant ALL on *.* to &#96;root&#96;@&#96;%&#96; with grant option;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="数据库基础"><a href="#数据库基础" class="headerlink" title="数据库基础"></a>数据库基础</h4><hr>
+<h5 id="SQL介绍"><a href="#SQL介绍" class="headerlink" title="SQL介绍"></a>SQL介绍</h5><blockquote>
+<p>SQL语句</p>
+</blockquote>
+<p>​    SQL： 结构化查询语言，查询关系型数据库（MYSQL）</p>
+<p>​    特点：非过程性，一个语句对应一种结果</p>
+<blockquote>
+<p>SQL分类 </p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>语言名称</th>
+<th>英文缩写</th>
+<th>作用</th>
+<th>关键字</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据定义语言DDL</td>
+<td>DDL:DataDefinition Language</td>
+<td>表操作</td>
+<td>create / alter | TABLE / VIEW / INDEX</td>
+</tr>
+<tr>
+<td>数据操纵语言DML</td>
+<td>DML:DataManipulation Language</td>
+<td>表记录操作</td>
+<td>insert / update / delete</td>
+</tr>
+<tr>
+<td>数据控制语言DCL</td>
+<td>DCL:DataControl Language</td>
+<td>库权限操作</td>
+<td>grant / revoke / begin transaction  commit</td>
+</tr>
+<tr>
+<td>数据查询语言DQL</td>
+<td>DQL:DataQuery Language</td>
+<td>表记录查询</td>
+<td>select</td>
+</tr>
+</tbody></table>
+<h5 id="数据库操作语句"><a href="#数据库操作语句" class="headerlink" title="数据库操作语句"></a>数据库操作语句</h5><h6 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h6><blockquote>
+<p>语法：create database [数据库名称]</p>
+</blockquote>
+<h6 id="查看有哪些数据库"><a href="#查看有哪些数据库" class="headerlink" title="查看有哪些数据库"></a>查看有哪些数据库</h6><blockquote>
+<p>语法：show databases</p>
+</blockquote>
+<p>查看某个数据库的创建信息: show create database [数据库名]</p>
+<h6 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h6><blockquote>
+<p>语法：drop database [数据库名]</p>
+</blockquote>
+<h6 id="修改数据库"><a href="#修改数据库" class="headerlink" title="修改数据库"></a>修改数据库</h6><blockquote>
+<p>alter database [数据库名称] character set  utf8 collate utf8_bin</p>
+</blockquote>
+<h6 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h6><blockquote>
+<p>切换数据库: use [数据库名称];</p>
+<p>查看当前正在使用数据库: select database();</p>
+</blockquote>
+<h6 id="SQL范例"><a href="#SQL范例" class="headerlink" title="SQL范例"></a>SQL范例</h6><p>创建一个名称为mydb1的数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database mydb1</span><br></pre></td></tr></table></figure>
+
+<p>创建一个使用gbk字符集的mydb2数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database mydb2 character set gbk</span><br></pre></td></tr></table></figure>
+
+<p>创建一个使用utf8字符集，并带校对规则的mydb3数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database mydb3 character set utf8 collate utf8_bin</span><br></pre></td></tr></table></figure>
+<p>查看当前数据库服务器中的所有数据库 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases</span><br></pre></td></tr></table></figure>
+
+<p>查看前面创建的mydb2数据库的定义信息 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create database mydb2</span><br></pre></td></tr></table></figure>
+
+<p>删除前面创建的mydb1数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database mydb1</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="数据表结构操作语句"><a href="#数据表结构操作语句" class="headerlink" title="数据表结构操作语句"></a>数据表结构操作语句</h5><h6 id="创建表的语法"><a href="#创建表的语法" class="headerlink" title="创建表的语法"></a>创建表的语法</h6><blockquote>
+<p>creat table 表名(列名 列类型(长度),列名 列类型(长度)…);</p>
+</blockquote>
+<p>首先要选择往哪个数据库里存入表：use [数据库] 。例如：use mydb2;</p>
+<h6 id="查看表结构"><a href="#查看表结构" class="headerlink" title="查看表结构"></a>查看表结构</h6><blockquote>
+<p>语法：desc [表名] </p>
+<p>desc employee;</p>
+</blockquote>
+<h6 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h6><ul>
+<li>添加列     alter table 表名 add  [列名] 列类型(长度) [约束];</li>
+<li>修改列     alter table 表名 modify [列名] 类型(长度) [约束];</li>
+<li>删除列     alter table 表名 drop [列名];</li>
+<li>修改列名 alter table 表名 change [旧列名] [新列名];</li>
+<li>修改表名 rename table 表名 to [新表名];</li>
+</ul>
+<h6 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h6><blockquote>
+<p>语法：drop table [表名]</p>
+</blockquote>
+<p>查看数据库中所有表： show tables;</p>
+<p>查看表结构：     desc [表名];</p>
+<h6 id="字段约束类型"><a href="#字段约束类型" class="headerlink" title="字段约束类型"></a>字段约束类型</h6><h6 id="SQL范例-1"><a href="#SQL范例-1" class="headerlink" title="SQL范例"></a>SQL范例</h6><p>创建一个员工表employee</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> employee(</span><br><span class="line">       id <span class="type">int</span>,</span><br><span class="line">       name <span class="type">varchar</span>(<span class="number">20</span>),</span><br><span class="line">       gender <span class="type">varchar</span>(<span class="number">5</span>),</span><br><span class="line">       birthday <span class="type">date</span>,</span><br><span class="line">       entry_date <span class="type">date</span>,</span><br><span class="line">       job  <span class="type">varchar</span>(<span class="number">20</span>),</span><br><span class="line">       salary <span class="keyword">double</span>,</span><br><span class="line">       resume text</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>在上面员工表的基本上增加一个image列</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> employee <span class="keyword">add</span> image <span class="type">varchar</span>(<span class="number">30</span>)</span><br></pre></td></tr></table></figure>
+
+<p>修改job列，使其长度为60。           </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> employee modify job <span class="type">varchar</span>(<span class="number">60</span>) <span class="keyword">not</span> <span class="keyword">null</span></span><br></pre></td></tr></table></figure>
+
+<p>删除gender列。                     </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> employee <span class="keyword">drop</span> gender</span><br></pre></td></tr></table></figure>
+
+<p>列名name修改为username     </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> <span class="keyword">user</span> change name username <span class="type">varchar</span>(<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+
+<p>表名改为user                   </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rename <span class="keyword">table</span> employee <span class="keyword">to</span> <span class="keyword">user</span></span><br></pre></td></tr></table></figure>
+
+<p>修改表的字符集为utf8      </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> <span class="keyword">user</span> <span class="type">character</span> <span class="keyword">set</span> utf8</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="数据表记录操作语句-☆☆☆"><a href="#数据表记录操作语句-☆☆☆" class="headerlink" title="数据表记录操作语句 ☆☆☆"></a>数据表记录操作语句 ☆☆☆</h5><h6 id="添加记录"><a href="#添加记录" class="headerlink" title="添加记录"></a>添加记录</h6><ul>
+<li>insert into 表名 (字段1,字段2,….) values (值1,值2,….)</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> employee (id,name,gender,birthday,entry_date,job,salary,resume) </span><br><span class="line"><span class="keyword">values</span>(<span class="number">1</span>,<span class="string">&#x27;zhouqingyu&#x27;</span>,<span class="string">&#x27;women&#x27;</span>,<span class="string">&#x27;1994-12-25&#x27;</span>,<span class="string">&#x27;2012-04-08&#x27;</span>,<span class="string">&#x27;tester&#x27;</span>,<span class="number">8000</span>,<span class="string">&#x27;goodhr!&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>省略前面的字段   insert into 表名 values (值1 ,值2 ,….) </li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> employee <span class="keyword">values</span>(<span class="number">2</span>,<span class="string">&#x27;liubeibei&#x27;</span>,<span class="string">&#x27;man&#x27;</span>,<span class="string">&#x27;1991-04-15&#x27;</span>,<span class="string">&#x27;2012-05-08&#x27;</span>,<span class="string">&#x27;coder&#x27;</span>,<span class="number">8000</span>,<span class="string">&#x27;goodceo!&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>以上两个方法插入的是所有字段，现在选择个别的字段插入 ，不插入的字段使用默认值</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> employee (id,name,job,salary) <span class="keyword">values</span> (<span class="number">3</span>,<span class="string">&#x27;zhangsan&#x27;</span>,<span class="string">&#x27;worker&#x27;</span>,<span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注意事项<ul>
+<li>字符串和日期类型 需要加上单引号</li>
+<li>插入的数据不能超过设定长度</li>
+<li>插入的时候值的位置要与字段的位置对应</li>
+</ul>
+</li>
+<li>插入中文记录  <ul>
+<li> insert into employee values (4,’李四’,’man’,’1992-01-01’,’2014-05-08’,’worker’,8000,’goodworker!’);</li>
+<li>如果插入中文时候报错，因为没修改字符集 ERROR1366 (HY000): Incorrect string value: ‘\xD5\xD4\xC1\xF9’ for column ‘name’ atrow 1</li>
+<li>解决办法：<ul>
+<li>一种临时：set names gbk;</li>
+<li>第二种：修改mysql配置文件，在mysql的安装路径下的文件 my.ini 找到 [mysql]改为： default-character-set=gbk</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>​        查看是否插入成功：select * from employee;</p>
+<h6 id="修改记录"><a href="#修改记录" class="headerlink" title="修改记录"></a>修改记录</h6><blockquote>
+<p>update 表名 set 字段名=值,字段名=值 [where 条件]  </p>
+</blockquote>
+<h6 id="删除记录"><a href="#删除记录" class="headerlink" title="删除记录"></a>删除记录</h6><blockquote>
+<p>delete from 表名 [where 条件];</p>
+</blockquote>
+<ul>
+<li>如果没有条件 默认删除整个表 中的所有记录。</li>
+<li>按照主键删除，两种方式<ul>
+<li>TRUNCATE TABLE相当于把整个表删除了，然后重新创建了一个表，不可恢复。</li>
+<li>DELETE FROM 把表逐行删除</li>
+</ul>
+</li>
+</ul>
+<h6 id="SQL范例-2"><a href="#SQL范例-2" class="headerlink" title="SQL范例"></a>SQL范例</h6><p>将所有员工薪水修改为25000元。             </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update employee set salary&#x3D;25000</span><br></pre></td></tr></table></figure>
+
+<p>将姓名为’zhouqingyu’的员工薪水修改为12000元。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update employee set salary&#x3D;12000 where name&#x3D;&#39;zhouqingyu&#39;</span><br></pre></td></tr></table></figure>
+
+<p>将姓名为’liubeibei’的员工薪水修改为25000元,job改为CEO。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update employee set salary&#x3D;25000,job&#x3D;&#39;CEO&#39;where name&#x3D;&#39;liubeibei&#39;</span><br></pre></td></tr></table></figure>
+
+<p>将’李四’的薪水在原有基础上增加1000元。            </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update employee set salary&#x3D; salary + 1000 where name&#x3D;&#39;李四&#39;</span><br></pre></td></tr></table></figure>
+
+<p>把员工‘王五’的信息删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from employee where name &#x3D; &#39;王五&#39;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>=======================================================================</p>
+<h5 id="查询语句☆☆☆☆☆"><a href="#查询语句☆☆☆☆☆" class="headerlink" title="查询语句☆☆☆☆☆"></a>查询语句☆☆☆☆☆</h5><p>先创建个表，插入几条数据待用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">create table exam(</span><br><span class="line"> id  int primary key auto_increment,</span><br><span class="line"> name varchar(20) ,</span><br><span class="line"> math double,</span><br><span class="line"> english double,</span><br><span class="line"> chinese double</span><br><span class="line">);</span><br><span class="line">insert into exam values (null,&#39;张三&#39;,65,70,78);</span><br><span class="line">insert into exam values (null,&#39;李四&#39;,68,80,56);</span><br><span class="line">insert into exam values (null,&#39;王五&#39;,72,76,89);</span><br><span class="line">insert into exam values (null,&#39;赵六&#39;,75,68,75);</span><br><span class="line">insert into exam values (null,&#39;刘背背&#39;,80,79,82);</span><br><span class="line">insert into exam values (null,&#39;周晴玉&#39;,80,65,93);</span><br></pre></td></tr></table></figure>
+
+
+<h6 id="查询语句的写法"><a href="#查询语句的写法" class="headerlink" title="查询语句的写法"></a>查询语句的写法</h6><blockquote>
+<p>select [distinct] *|列名,列名,列名… from 表名 where 条件;</p>
+</blockquote>
+<ul>
+<li><p>select: 查询</p>
+</li>
+<li><p>distinct:去掉重复的记录.</p>
+</li>
+<li><p>from:从哪个表</p>
+</li>
+</ul>
+<p>查询所有的记录      </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from exam</span><br></pre></td></tr></table></figure>
+
+<p>查询名称和数学成绩                  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name,math from exam</span><br></pre></td></tr></table></figure>
+
+<p>查询数学成绩，都有多少分(去掉重复的)   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select distinct math from exam</span><br></pre></td></tr></table></figure>
+
+<h6 id="使用select-查询表达式"><a href="#使用select-查询表达式" class="headerlink" title="使用select 查询表达式"></a>使用select 查询表达式</h6><blockquote>
+<p>用as 给字段加别名</p>
+</blockquote>
+<p>在所有学生分数上加10分特长分</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name ,math+10 , english +10,chinese+10 from exam</span><br></pre></td></tr></table></figure>
+
+<p>统计每个学生的总分        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name ,math + english + chinese from exam</span><br></pre></td></tr></table></figure>
+
+<p>使用别名表示学生分数  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name,math + english + chinese as sum from exam</span><br></pre></td></tr></table></figure>
+
+<h6 id="使用where字句"><a href="#使用where字句" class="headerlink" title="使用where字句"></a>使用where字句</h6><p>查询姓名为<code>张三</code>的学生成绩</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from exam where name&#x3D;&#39;张三&#39;</span><br></pre></td></tr></table></figure>
+<p>查询语文成绩大于90分的同学 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from exam where chinese &gt; 90</span><br></pre></td></tr></table></figure>
+<p>查询总分大于220分的所有同学</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from exam where math+chinese+english &gt; 220</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>关于where字句的运算符</p>
+<ul>
+<li>比较运算符: &lt;小于  &gt;大于  &lt;= 小于等于  &gt;=大于等于  =等于  &lt;&gt;不等于</li>
+<li>between and </li>
+<li>in           in 一组值 math in (65,75,85)</li>
+<li>like        模糊查询,用%代替模糊的位置。例如：like’刘%’  </li>
+<li>is null     判断是否为null但是不能写 math=null，用math is null</li>
+<li>is not null </li>
+</ul>
+</li>
+<li><p>逻辑运算符</p>
+</li>
+</ul>
+<p>​              and 与、or 或、not 非</p>
+<p>做个练习</p>
+<p>查询英语分数在 70－80之间的同学</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-- 方式一</span><br><span class="line">select * from exam where english&gt;&#x3D;70 and english&lt;&#x3D;80;</span><br><span class="line">-- 方式二</span><br><span class="line">select * from exam where english between 70 and 80;</span><br></pre></td></tr></table></figure>
+<p>查询数学分数为68,72,75的同学</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from exam where math in (68,72,75);</span><br></pre></td></tr></table></figure>
+<p>查询所有名字里含有<code>周</code>的学生成绩</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from exam where name like &#39;%周%&#39;;</span><br></pre></td></tr></table></figure>
+<p>查询数学和语文分数都&gt;80的同学</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from exam where math &gt;80 and chinese &gt; 80;</span><br></pre></td></tr></table></figure>
+<p>查询数学和语文分数有一科&gt;80的同学</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from exam where math &gt;80 or chinese &gt; 80;</span><br></pre></td></tr></table></figure>
+
+<h6 id="order-by排序"><a href="#order-by排序" class="headerlink" title="order by排序"></a>order by排序</h6><blockquote>
+<p>asc升序  desc降序 默认是升序</p>
+</blockquote>
+<p>order by 必须在所有的select语句的最后</p>
+<p>做个练习</p>
+<p>对数学成绩排序后输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from exam order by math;</span><br></pre></td></tr></table></figure>
+<p>对总分排序按从高到低的顺序输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name,math+chinese+english as sum from exam order by math+chinese+english desc;</span><br></pre></td></tr></table></figure>
+<p>对学生成绩按照英语进行降序排序，英语相同学员按照数学降序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from exam order by english desc,math desc;</span><br></pre></td></tr></table></figure>
+<p>对姓刘的学生成绩排序输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from exam where name like &#39;刘%&#39; order by math;</span><br></pre></td></tr></table></figure>
+<h6 id="聚合函数-分组函数-统计时候使用"><a href="#聚合函数-分组函数-统计时候使用" class="headerlink" title="聚合函数(分组函数) 统计时候使用."></a>聚合函数(分组函数) 统计时候使用.</h6><ul>
+<li>count()统计数量</li>
+</ul>
+<blockquote>
+<p>语法：select count(*|列名) from 表;</p>
+</blockquote>
+<p> 统计一个班级共有多少学生</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select count(*) from exam;</span><br></pre></td></tr></table></figure>
+<p>统计数学成绩大于90的学生有多少个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select count(*) from exam where math &gt;&#x3D; 80;</span><br></pre></td></tr></table></figure>
+<p>统计总分大于220的人数有多少</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select count(*) from exam where math+chinese+english &gt;220;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>sum()求和</li>
+</ul>
+<p>统计一个班级数学总成绩</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sum(math) from exam;</span><br></pre></td></tr></table></figure>
+<p>统计一个班级语文、英语、数学各科的总成绩</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sum(math),sum(english),sum(chinese) from exam;</span><br></pre></td></tr></table></figure>
+<p>统计一个班级语文、英语、数学的成绩总和</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sum(math+chinese+english) from exam;</span><br></pre></td></tr></table></figure>
+<p> 统计一个班级语文成绩平均分</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sum(chinese)&#x2F;count(*) from exam;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>avg()平均值</li>
+</ul>
+<p>求一个班级数学平均分</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select avg(math) from exam;</span><br></pre></td></tr></table></figure>
+<p>求一个班级总分平均分</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select avg(math+chinese+english) from exam;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>max()和min()</li>
+</ul>
+<p>求班级最高分和最低分</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select max(english),min(english) from exam;</span><br></pre></td></tr></table></figure>
+<h6 id="group-by-分组"><a href="#group-by-分组" class="headerlink" title="group by 分组"></a>group by 分组</h6><blockquote>
+<p>结合聚合函数一起完成分组统计</p>
+</blockquote>
+<p>对订单表中商品归类后，显示每一类商品的总价</p>
+<p>创建商品表，插入数据备用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">drop table orders;</span><br><span class="line">create table orders(</span><br><span class="line"> id  int primary key auto_increment,</span><br><span class="line"> buyer varchar(20),</span><br><span class="line"> product varchar(20) ,</span><br><span class="line"> price double</span><br><span class="line">);</span><br><span class="line">insert into orders values (null,&#39;张三&#39;,&quot;苹果&quot;,7);</span><br><span class="line">insert into orders values (null,&#39;李四&#39;,&quot;苹果&quot;,3);</span><br><span class="line">insert into orders values (null,&#39;王五&#39;,&quot;菠萝&quot;,6);</span><br><span class="line">insert into orders values (null,&#39;赵六&#39;,&quot;芒果&quot;,6);</span><br><span class="line">insert into orders values (null,&#39;刘背背&#39;,&quot;菠萝&quot;,8);</span><br><span class="line">insert into orders values (null,&#39;周晴玉&#39;,&quot;香蕉&quot;,13);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>需要按照商品名称进行分组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select product,sum(price) from orders group by product;</span><br></pre></td></tr></table></figure>
+<p>对订单表中商品归类后，显示每一类商品的数量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select product,count(*) from orders group by product;</span><br></pre></td></tr></table></figure>
+<p>查询购买了几类商品，并且每类总价大于10的商品</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select product,sum(price) from orders group by product having sum(price) &gt; 10;</span><br></pre></td></tr></table></figure>
+<p>where 后面不能加组函数，having 用来过滤分组后的条件。 约束条件出现的额顺序：S-F-W-G-H-O </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select... from .. [where ... group by ... having... order by...] </span><br></pre></td></tr></table></figure>
+
+<h5 id="数据库的备份和还原"><a href="#数据库的备份和还原" class="headerlink" title="数据库的备份和还原"></a>数据库的备份和还原</h5><h6 id="备份数据库"><a href="#备份数据库" class="headerlink" title="备份数据库"></a>备份数据库</h6><blockquote>
+<p>在cmd界面中敲入命令 mysql dump -u root -p 数据库名 &gt; c:\backUp.sql</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql dump -u root -p 数据库名 &gt; c:\backUp.sql</span><br></pre></td></tr></table></figure>
+
+<h6 id="还原数据库"><a href="#还原数据库" class="headerlink" title="还原数据库"></a>还原数据库</h6><p>1、在cmd界面中敲入命令 mysql -u root -p 数据库名 &lt; backUp.sql</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p 数据库名 &lt; backUp.sql</span><br></pre></td></tr></table></figure>
+
+<p>2、创建一个数据库.</p>
+<p>3、 进入到数据库中 执行 source c:\backUp.sql</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source c:\backUp.sql</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="多表联合查询"><a href="#多表联合查询" class="headerlink" title="多表联合查询"></a>多表联合查询</h5><p>先创建两张表 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">-- 人员表</span><br><span class="line">create table person(</span><br><span class="line">   id int primary key auto_increment,</span><br><span class="line">   name varchar(20),</span><br><span class="line">   age int</span><br><span class="line">);</span><br><span class="line">insert into person values (null,&#39;张三&#39;,23);</span><br><span class="line">insert into person values (null,&#39;李四&#39;,13);</span><br><span class="line">insert into person values (null,&#39;王五&#39;,33);</span><br><span class="line">insert into person values (null,&#39;赵六&#39;,42);</span><br><span class="line">insert into person values (null,&#39;田七&#39;,21);</span><br><span class="line">insert into person values (null,&#39;王八&#39;,19);</span><br><span class="line">insert into person values (null,&#39;周九&#39;,26);</span><br><span class="line">-- 部门表</span><br><span class="line">create table dept(</span><br><span class="line">   id int primary key auto_increment,</span><br><span class="line">   name  varchar(20)</span><br><span class="line">);</span><br><span class="line">insert into dept values(null,&#39;人力资源部&#39;);</span><br><span class="line">insert into dept values(null,&#39;研发部&#39;);                </span><br><span class="line">insert into dept values(null,&#39;财务部&#39;); </span><br><span class="line">-- 建立联系</span><br><span class="line">alter table person add dept_id int;</span><br></pre></td></tr></table></figure>
+
+<h6 id="关系型数据库两张表之间的关系"><a href="#关系型数据库两张表之间的关系" class="headerlink" title="关系型数据库两张表之间的关系"></a>关系型数据库两张表之间的关系</h6><p>三种关系类型.</p>
+<ul>
+<li><p>多对多 比如学生选课系统，student  classes 多对多的关系</p>
+</li>
+<li><p>一对多 部门和员工，dept    employee 一对多或者多对一</p>
+</li>
+<li><p>一对一 (比较少)  其实可以建成一张表</p>
+</li>
+</ul>
+<p>​                 </p>
+<h6 id="多表查询：多表联合查询"><a href="#多表查询：多表联合查询" class="headerlink" title="多表查询：多表联合查询"></a>多表查询：多表联合查询</h6><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lvchenfeng/p/5972451.html">网上人写的博客，有时间整理下</a></p>
+<h5 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h5><h5 id="MYSQL常见数据类型"><a href="#MYSQL常见数据类型" class="headerlink" title="MYSQL常见数据类型"></a>MYSQL常见数据类型</h5><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>char(255)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>​       mysql中几种数据类型：</p>
+<p>​       char和 varchar区别?</p>
+<p>char属于是定长. varchar可变长度  例如： char(8) 输入一个4个字符的字符串，就会使用空格补全其他的4个长度 </p>
+<p>varchar(8) 输入4个字符就相当于是4个字符，varchar的长度定为4</p>
+<p>​       datetime和 timestamp 区别? 他们都是既有日期又有时间，区别在于没设定时间时timestamp可以自己存入系统的时间.</p>
+</div><div class="tags"></div><div class="post-nav"><a class="pre" href="/2021/04/19/thirty/Redis/sentinel.conf/"></a><a class="next" href="/2021/04/19/thirty/Redis/Redis%E5%93%A8%E5%85%B5%EF%BC%88sentinel%EF%BC%89%E6%A8%A1%E5%BC%8F/"></a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://example.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo-next/">hexo_next</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A9%BE%E8%80%83/">驾考</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/next%E9%85%8D%E7%BD%AE/" style="font-size: 15px;">next配置</a> <a href="/tags/next-%E5%88%86%E9%A1%B5/" style="font-size: 15px;">next_分页</a> <a href="/tags/next/" style="font-size: 15px;">next</a> <a href="/tags/next-%E6%97%A5%E5%BF%97/" style="font-size: 15px;">next_日志</a> <a href="/tags/next-tags/" style="font-size: 15px;">next_tags</a> <a href="/tags/next-categories/" style="font-size: 15px;">next_categories</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/04/28/thirty/hexo/Maupassant%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98/">thirty/hexo/Maupassant主题配置/安装主题</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/28/thirty/hexo/hexo%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98/">thirty/hexo/hexo修改主题</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/28/thirty/hexo/hexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">thirty/hexo/hexo配置文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/28/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/19/thirty/Redis/sentinel.conf/">thirty/Redis/sentinel.conf</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/19/thirty/01-%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0%E5%A4%A7%E7%BA%B2/SQL/">thirty/01-测试学习大纲/SQL</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/19/thirty/Redis/Redis%E5%93%A8%E5%85%B5%EF%BC%88sentinel%EF%BC%89%E6%A8%A1%E5%BC%8F/">thirty/Redis/Redis哨兵（sentinel）模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/19/thirty/Redis/redis/">thirty/Redis/redis</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/19/thirty/Java%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF%E6%A0%88/">thirty/Java学习技术栈</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/19/thirty/Maven/POM%E6%96%87%E4%BB%B6%E8%AF%A6%E7%BB%86%E8%A7%A3%E8%AF%BB/">thirty/Maven/POM文件详细解读</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2021 <a href="/." rel="nofollow">lbb-1011的个人网站.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js" successtext="复制成功!"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>
