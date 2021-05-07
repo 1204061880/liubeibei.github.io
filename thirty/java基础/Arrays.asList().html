@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>lbb-1011的个人网站</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="description" content="Arrays.asList() 方法的使用和雷区怎么使用12String[] names &#x3D; new String[]&amp;#123;&quot;张三&quot;,&quot;李四&quot;&amp;#125;;List&lt;String&gt; nameList &#x3D; Arrays.asList(names);  容易踩的坑报异常UnsupportedOperationException 上个例子通过as">
+<meta property="og:type" content="website">
+<meta property="og:title" content="lbb-1011的个人网站">
+<meta property="og:url" content="http://example.com/thirty/java%E5%9F%BA%E7%A1%80/Arrays.asList().html">
+<meta property="og:site_name" content="lbb-1011的个人网站">
+<meta property="og:description" content="Arrays.asList() 方法的使用和雷区怎么使用12String[] names &#x3D; new String[]&amp;#123;&quot;张三&quot;,&quot;李四&quot;&amp;#125;;List&lt;String&gt; nameList &#x3D; Arrays.asList(names);  容易踩的坑报异常UnsupportedOperationException 上个例子通过as">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-28T13:32:24.078Z">
+<meta property="article:modified_time" content="2021-04-19T13:00:50.906Z">
+<meta property="article:author" content="lbb-1011">
+<meta name="twitter:card" content="summary">
+    
+
+    
+        <link rel="alternate" href="/" title="lbb-1011的个人网站" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E5%88%86%E7%B1%BB1/">分类1</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    lbb-1011的个人网站
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="page-" class="article article-single article-type-page" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h3 id="Arrays-asList-方法的使用和雷区"><a href="#Arrays-asList-方法的使用和雷区" class="headerlink" title="Arrays.asList() 方法的使用和雷区"></a>Arrays.asList() 方法的使用和雷区</h3><h4 id="怎么使用"><a href="#怎么使用" class="headerlink" title="怎么使用"></a>怎么使用</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String[] names = <span class="keyword">new</span> String[]&#123;<span class="string">&quot;张三&quot;</span>,<span class="string">&quot;李四&quot;</span>&#125;;</span><br><span class="line">List&lt;String&gt; nameList = Arrays.asList(names);</span><br></pre></td></tr></table></figure>
+
+<h4 id="容易踩的坑"><a href="#容易踩的坑" class="headerlink" title="容易踩的坑"></a>容易踩的坑</h4><h5 id="报异常UnsupportedOperationException"><a href="#报异常UnsupportedOperationException" class="headerlink" title="报异常UnsupportedOperationException"></a>报异常<code>UnsupportedOperationException</code></h5><blockquote>
+<p>上个例子通过asList()得到的list在执行add()或者remove()时，就会抛出异常 <code>java.lang.UnsupportedOperationException</code> </p>
+</blockquote>
+<h6 id="以add-为例分析"><a href="#以add-为例分析" class="headerlink" title="以add()为例分析"></a>以add()为例分析</h6><p>我们先来看下asList()是怎么实现的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">List&lt;T&gt; <span class="title">asList</span><span class="params">(T... a)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;&gt;(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>返回是ArrayList啊，ArrayList是有add()/remove()这些方法的，为什么通过asList得到的就不行呢？这是因为asList()返回的ArrayList和通过 new ArrayList&lt;&gt;()得到的ArrayList不一样</p>
+<ul>
+<li><p>asList()返回的ArrayList并不来自java.util包，而是 java.util.Arrays.ArrayList，是Arrays自己定义的静态内部类</p>
+</li>
+<li><p>new ArrayList()得到的才是java.util.ArrayList，这才是我们常用的</p>
+</li>
+</ul>
+<p>二者都继承自AbstractList，区别在于java.util.ArrayList重写add()方法，前者直接使用父类AbstractList的add()方法，我们来看下父类中add()的实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">    add(size(), e);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, E element)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> UnsupportedOperationException();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>AbstractList中的add()方法直接抛出了UnsupportedOperationException()异常，也就是前面我们看到的现象。</p>
+<h5 id="数组值的怎么也变了"><a href="#数组值的怎么也变了" class="headerlink" title="数组值的怎么也变了"></a>数组值的怎么也变了</h5><p>我们通过一段代码展示错误现象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">String[] names = <span class="keyword">new</span> String[]&#123;<span class="string">&quot;张三&quot;</span>,<span class="string">&quot;李四&quot;</span>&#125;;</span><br><span class="line">List&lt;String&gt; nameList = Arrays.asList(names);</span><br><span class="line">nameList.set(<span class="number">0</span>, <span class="string">&quot;小刘&quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (Object o : nameList) &#123;</span><br><span class="line">    System.out.print(o + <span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">System.out.println();</span><br><span class="line"><span class="keyword">for</span> (Object o : names) &#123;</span><br><span class="line">    System.out.print(o + <span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//====输出=====</span></span><br><span class="line"><span class="comment">//小刘 李四 </span></span><br><span class="line"><span class="comment">//小刘 李四 </span></span><br></pre></td></tr></table></figure>
+
+<p>现象：通过asList()方法把数组names转成List集合nameList，通过set()方法改变了集合中的值，这时候数组中的值也变了。</p>
+<p>为什么？来看下Arrays中ArrayList的定义方式。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">      <span class="keyword">private</span> <span class="keyword">final</span> E[] a;</span><br><span class="line"></span><br><span class="line">      ArrayList(E[] array) &#123;</span><br><span class="line">          a = Objects.requireNonNull(array);</span><br><span class="line">      &#125;        </span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line">      <span class="function"><span class="keyword">public</span> E <span class="title">set</span><span class="params">(<span class="keyword">int</span> index, E element)</span> </span>&#123;</span><br><span class="line">          E oldValue = a[index];</span><br><span class="line">          a[index] = element;</span><br><span class="line">          <span class="keyword">return</span> oldValue;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过asList()获得List的集合，实际引用的就是我们传进去的数组，当我们执行set()操作时，就是对原数组进行操作。</p>
+<h5 id="奇怪的基本数据类型"><a href="#奇怪的基本数据类型" class="headerlink" title="奇怪的基本数据类型"></a>奇怪的基本数据类型</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//基本数据类型</span></span><br><span class="line"><span class="keyword">int</span>[] num = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line">List&lt;<span class="keyword">int</span>[]&gt; numList = Arrays.asList(num);</span><br><span class="line"><span class="comment">//对象类型</span></span><br><span class="line">Integer[] num2 = <span class="keyword">new</span> Integer[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">List&lt;Integer&gt; numList2 = Arrays.asList(num2);</span><br></pre></td></tr></table></figure>
+
+<p>当数组类型为基本数据类型时，通过asList()并没有得到想要的List<Integer> 而是得到了List&lt;int[]&gt;</p>
+<p>由此我们可以看出，该方法对于基本数据类型的数组支持并不好</p>
+<h4 id="举几个例子"><a href="#举几个例子" class="headerlink" title="举几个例子"></a>举几个例子</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//不想举了，自己想吧</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<li><p>如果想遍历list里的值，可以用Arrays.asList()；但是如果想<code>新增</code>或者 <code>删除</code>的时候，还是要new ArrayList&lt;&gt;()，然后把元素一个个添加进去</p>
+</li>
+<li><p>asList()最好使用对象型数组，不要使用基本数据类型的数组</p>
+<ul>
+<li>对象型数组，比如String，Integer，XxxVo</li>
+<li>基本数据类型 byte,short,int,long,float,double,boolean</li>
+</ul>
+</li>
+<li><p>不支持 <code>add()</code>/  <code>remove()</code>  /<code>clear()</code> 方法</p>
+</li>
+<li><p>数组和生成的List值联动</p>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://example.com/thirty/java%E5%9F%BA%E7%A1%80/Arrays.asList().html" data-id="cko2zs3q50015hudd5afi5553" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "lbb-1011"
+        },
+        
+        "image": "http://example.com",
+        
+        
+        "datePublished": "2021-04-28",
+        "dateCreated": "2021-04-28",
+        "dateModified": "2021-04-19",
+        "url": "http://example.com/thirty/java基础/Arrays.asList().html",
+        "description": "Arrays.asList() 方法的使用和雷区怎么使用12String[] names = new String[]&#123;&quot;张三&quot;,&quot;李四&quot;&#125;;List&lt;String&gt; nameList = Arrays.asList(names);
+
+容易踩的坑报异常UnsupportedOperationException
+上个例子通过as",
+        "wordCount": 424
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-stack-overflow"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/28/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E5%88%86%E7%B1%BB1/">分类1</a></p>
+                            <p class="item-title"><a href="/2021/04/28/hello-world/" class="title">maupassant主题的使用</a></p>
+                            <p class="item-date"><time datetime="2021-04-28T14:20:28.000Z" itemprop="datePublished">2021-04-28</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E7%B1%BB1/">分类1</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE1/" rel="tag">标签1</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/%E6%A0%87%E7%AD%BE1/" style="font-size: 10px;">标签1</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 lbb-1011</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://example.com/thirty/java%E5%9F%BA%E7%A1%80/Arrays.asList().html';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
