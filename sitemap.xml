@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://lbb.cool/about/index.html</loc>
-    
-    <lastmod>2021-05-10</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://lbb.cool/archives/4218094367.html</loc>
     
     <lastmod>2021-05-10</lastmod>
@@ -16,7 +9,14 @@
   </url>
   
   <url>
-    <loc>http://lbb.cool/archives/3814210988.html</loc>
+    <loc>http://lbb.cool/archives/1734813504.html</loc>
+    
+    <lastmod>2021-05-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lbb.cool/archives/1636778189.html</loc>
     
     <lastmod>2021-05-10</lastmod>
     
@@ -30,7 +30,14 @@
   </url>
   
   <url>
-    <loc>http://lbb.cool/archives/1636778189.html</loc>
+    <loc>http://lbb.cool/archives/3814210988.html</loc>
+    
+    <lastmod>2021-05-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lbb.cool/about/index.html</loc>
     
     <lastmod>2021-05-10</lastmod>
     
@@ -45,13 +52,6 @@
   
   <url>
     <loc>http://lbb.cool/categories/index.html</loc>
-    
-    <lastmod>2021-05-07</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lbb.cool/archives/1734813504.html</loc>
     
     <lastmod>2021-05-07</lastmod>
     

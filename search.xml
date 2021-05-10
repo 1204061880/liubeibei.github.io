@@ -1,36 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo修改主题</title>
-    <url>/archives/3814210988.html</url>
-    <content><![CDATA[<p><a href="https://hexo.io/zh-cn/docs/themes">hexo主题文档</a></p>
-<p><a href="https://hexo.io/themes/">hexo主题获取</a></p>
-<p><a href="https://github.com/search?o=desc&p=1&q=hexo-theme&s=stars&type=Repositories">github主题星级排行</a></p>
-<p>创建 Hexo 主题非常容易，您只要在 <code>themes</code> 文件夹内，新增一个任意名称的文件夹，并修改 <code>_config.yml</code> 内的 <code>theme</code> 设定，即可切换主题。一个主题可能会有以下的结构：</p>
-<figure class="highlight mel"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── languages</span><br><span class="line">├── <span class="keyword">layout</span></span><br><span class="line">├── scripts</span><br><span class="line">└── <span class="keyword">source</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="待选主题"><a href="#待选主题" class="headerlink" title="待选主题"></a>待选主题</h3><p>NexT</p>
-<p>Butterfly</p>
-<p>Wikitten</p>
-<p><strong>Pure</strong></p>
-<p><strong>icarus</strong></p>
-<p>melody</p>
-<p>Yilia</p>
-<p>tranquilpeak</p>
-<p>melody</p>
-<p>fluid</p>
-<p>snippet</p>
-<p>volantis</p>
-<p>hueman</p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo配置</title>
     <url>/archives/2933120321.html</url>
     <content><![CDATA[<h3 id="hexo配置"><a href="#hexo配置" class="headerlink" title="hexo配置"></a>hexo配置</h3><h4 id="Url配置"><a href="#Url配置" class="headerlink" title="Url配置"></a>Url配置</h4><p>用于配置Url请求时的主要属性。<br> Url这块我进行了优化，安装了hexo-abbrlink插件：让文章链接唯一化。在hexo根目录下执行<br> <code>$ npm install hexo-abbrlink --save</code></p>
@@ -160,6 +130,36 @@
 
 
 
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo修改主题</title>
+    <url>/archives/3814210988.html</url>
+    <content><![CDATA[<p><a href="https://hexo.io/zh-cn/docs/themes">hexo主题文档</a></p>
+<p><a href="https://hexo.io/themes/">hexo主题获取</a></p>
+<p><a href="https://github.com/search?o=desc&p=1&q=hexo-theme&s=stars&type=Repositories">github主题星级排行</a></p>
+<p>创建 Hexo 主题非常容易，您只要在 <code>themes</code> 文件夹内，新增一个任意名称的文件夹，并修改 <code>_config.yml</code> 内的 <code>theme</code> 设定，即可切换主题。一个主题可能会有以下的结构：</p>
+<figure class="highlight mel"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── languages</span><br><span class="line">├── <span class="keyword">layout</span></span><br><span class="line">├── scripts</span><br><span class="line">└── <span class="keyword">source</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="待选主题"><a href="#待选主题" class="headerlink" title="待选主题"></a>待选主题</h3><p>NexT</p>
+<p>Butterfly</p>
+<p>Wikitten</p>
+<p><strong>Pure</strong></p>
+<p><strong>icarus</strong></p>
+<p>melody</p>
+<p>Yilia</p>
+<p>tranquilpeak</p>
+<p>melody</p>
+<p>fluid</p>
+<p>snippet</p>
+<p>volantis</p>
+<p>hueman</p>
 ]]></content>
       <categories>
         <category>博客搭建</category>
