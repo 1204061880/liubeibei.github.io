@@ -108,46 +108,6 @@
       </tags>
   </entry>
   <entry>
-    <title>CEOCTOCFO各种CXO代表什么意思</title>
-    <url>/948693747.html</url>
-    <content><![CDATA[<h3 id="CEO"><a href="#CEO" class="headerlink" title="CEO"></a>CEO</h3><blockquote>
-<p>Chief Executive Officer</p>
-</blockquote>
-<p>首席执行官</p>
-<h3 id="CTO"><a href="#CTO" class="headerlink" title="CTO"></a>CTO</h3><blockquote>
-<p>Chief Technology Officer</p>
-</blockquote>
-<p>首席技术官</p>
-<h3 id="COO"><a href="#COO" class="headerlink" title="COO"></a>COO</h3><blockquote>
-<p>Chief Operating Officer</p>
-</blockquote>
-<p>首席运营官</p>
-<h3 id="CFO"><a href="#CFO" class="headerlink" title="CFO"></a>CFO</h3><blockquote>
-<p>Chief Financial Officer</p>
-</blockquote>
-<p>首席财务官</p>
-<h3 id="CIO"><a href="#CIO" class="headerlink" title="CIO"></a>CIO</h3><blockquote>
-<p>Chief Information Officer</p>
-</blockquote>
-<p>首席信息官</p>
-<h3 id="CCO"><a href="#CCO" class="headerlink" title="CCO"></a>CCO</h3><blockquote>
-<p>Chief Cultural Officer</p>
-</blockquote>
-<p>首席文化（知识）官：企业中的主要职能就是统筹全局制定企业文化建设的规划，帮助员工树立起企业的核心价值观念。</p>
-<h3 id="CGO"><a href="#CGO" class="headerlink" title="CGO"></a>CGO</h3><blockquote>
-<p>Chief Gonverment Officer</p>
-</blockquote>
-<p>首席政府关系官</p>
-]]></content>
-      <categories>
-        <category>办公</category>
-      </categories>
-      <tags>
-        <tag>办公</tag>
-        <tag>冷知识</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ArraList和Arrays.asList()</title>
     <url>/1589897184.html</url>
     <content><![CDATA[<h3 id="ArrayList线程不安全"><a href="#ArrayList线程不安全" class="headerlink" title="ArrayList线程不安全"></a>ArrayList线程不安全</h3><h4 id="为什么ArrayList线程是不安全的"><a href="#为什么ArrayList线程是不安全的" class="headerlink" title="为什么ArrayList线程是不安全的"></a>为什么ArrayList线程是不安全的</h4><p>这里以add()方法为例，看看ArrayList是如何实现的。上源码！</p>
@@ -255,6 +215,46 @@
       </categories>
       <tags>
         <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CEOCTOCFO各种CXO代表什么意思</title>
+    <url>/948693747.html</url>
+    <content><![CDATA[<h3 id="CEO"><a href="#CEO" class="headerlink" title="CEO"></a>CEO</h3><blockquote>
+<p>Chief Executive Officer</p>
+</blockquote>
+<p>首席执行官</p>
+<h3 id="CTO"><a href="#CTO" class="headerlink" title="CTO"></a>CTO</h3><blockquote>
+<p>Chief Technology Officer</p>
+</blockquote>
+<p>首席技术官</p>
+<h3 id="COO"><a href="#COO" class="headerlink" title="COO"></a>COO</h3><blockquote>
+<p>Chief Operating Officer</p>
+</blockquote>
+<p>首席运营官</p>
+<h3 id="CFO"><a href="#CFO" class="headerlink" title="CFO"></a>CFO</h3><blockquote>
+<p>Chief Financial Officer</p>
+</blockquote>
+<p>首席财务官</p>
+<h3 id="CIO"><a href="#CIO" class="headerlink" title="CIO"></a>CIO</h3><blockquote>
+<p>Chief Information Officer</p>
+</blockquote>
+<p>首席信息官</p>
+<h3 id="CCO"><a href="#CCO" class="headerlink" title="CCO"></a>CCO</h3><blockquote>
+<p>Chief Cultural Officer</p>
+</blockquote>
+<p>首席文化（知识）官：企业中的主要职能就是统筹全局制定企业文化建设的规划，帮助员工树立起企业的核心价值观念。</p>
+<h3 id="CGO"><a href="#CGO" class="headerlink" title="CGO"></a>CGO</h3><blockquote>
+<p>Chief Gonverment Officer</p>
+</blockquote>
+<p>首席政府关系官</p>
+]]></content>
+      <categories>
+        <category>办公</category>
+      </categories>
+      <tags>
+        <tag>办公</tag>
+        <tag>冷知识</tag>
       </tags>
   </entry>
   <entry>
